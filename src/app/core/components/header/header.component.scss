@@ -5,15 +5,22 @@
 .header-wrapper {
   position: fixed;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.6rem 1rem;
   height: $header-height;
   transition: 1s ease 0s;
   background-color: transparent;
   border-bottom: 1px solid transparent;
   z-index: 1;
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.6rem 0;
+  }
 
   .header-left {
     display: flex;

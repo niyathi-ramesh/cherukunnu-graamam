@@ -14,10 +14,8 @@ export class LanguageSelectComponent implements OnInit {
     this.lang = sessionStorage.getItem('lang') || defaultLang;
   }
 
-  changeLang(event: Event) {
-    const lang = (event.target as HTMLSelectElement).value;
-
-    sessionStorage.setItem('lang', lang);
+  changeLanguage(language: string) {
+    sessionStorage.setItem('lang', language);
     window.location.reload();
   }
 }

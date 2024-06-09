@@ -15,6 +15,7 @@ import {
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ContentTemplateComponent } from './components/content-template/content-template.component';
 import { UtilService } from './services/util.service';
+import { MaterialModule } from './material.module';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -32,8 +33,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    MaterialModule,
   ],
-  exports: [TranslateModule, ContentTemplateComponent],
+  exports: [TranslateModule, ContentTemplateComponent, MaterialModule],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),
     TranslateStore,

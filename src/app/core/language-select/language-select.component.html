@@ -1,4 +1,19 @@
-<select class="select" (change)="changeLang($event)">
-  <option value="en" [selected]="lang === 'en'">English</option>
-  <option value="ml" [selected]="lang === 'ml'">മലയാളം</option>
-</select>
+<button mat-button [matMenuTriggerFor]="menu">
+  {{ lang === "en" ? "English" : "മലയാളം" }}
+</button>
+<mat-menu #menu="matMenu">
+  <button
+    mat-menu-item
+    (click)="changeLanguage('en')"
+    [class.active]="lang === 'en'"
+  >
+    English
+  </button>
+  <button
+    mat-menu-item
+    (click)="changeLanguage('ml')"
+    [class.active]="lang === 'ml'"
+  >
+    മലയാളം
+  </button>
+</mat-menu>
